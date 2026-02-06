@@ -24,3 +24,17 @@ def home(request: Request):
 @app.get("/apply")
 def apply(request: Request):
     return templates.TemplateResponse("apply.html", {"request": request})
+
+@app.get("/team")
+def team(request: Request):
+    return templates.TemplateResponse("team.html", {"request": request})
+
+
+@app.get("/donate")
+def donate(request: Request):
+    return templates.TemplateResponse("donate.html", {"request": request})
+
+
+@app.get("/contact")
+def contact(request: Request):
+    return templates.TemplateResponse("contact.html", {"request": request})

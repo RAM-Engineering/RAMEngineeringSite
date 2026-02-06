@@ -14,7 +14,7 @@ body {
 
 .hero-elite {
   position: relative;
-  min-height: 100vh;
+  min-height: 50vh;
   background: linear-gradient(
     135deg,
     #1c7ed6 0%,
@@ -29,6 +29,96 @@ body {
   text-align: center;
   overflow: hidden;
   padding: 0 20px;
+}
+
+/* Team + donate + contact pages: keep hero half-height and fit content */
+.team-page .hero-elite,
+.donate-page .hero-elite,
+.contact-page .hero-elite {
+  height: 50vh;
+  min-height: 50vh;
+  max-height: 50vh;
+  padding: 20px;
+}
+
+.team-page .hero-logo,
+.donate-page .hero-logo,
+.contact-page .hero-logo {
+  width: 220px;
+}
+
+.team-page .hero-elite h1,
+.donate-page .hero-elite h1,
+.contact-page .hero-elite h1 {
+  font-size: 3rem;
+}
+
+.team-page .hero-elite p,
+.donate-page .hero-elite p,
+.contact-page .hero-elite p {
+  margin-bottom: 1.5rem;
+}
+
+.team-page .home-link,
+.donate-page .home-link,
+.contact-page .home-link {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 6;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #eaf3ff;
+  background: rgba(7, 19, 36, 0.5);
+  border: 1px solid rgba(199, 230, 255, 0.35);
+  box-shadow: 0 10px 24px rgba(7, 19, 36, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.team-page .home-link:hover,
+.donate-page .home-link:hover,
+.contact-page .home-link:hover {
+  transform: translateY(-1px);
+  background: rgba(7, 19, 36, 0.7);
+  box-shadow: 0 14px 30px rgba(7, 19, 36, 0.45);
+}
+
+.team-page .home-icon,
+.donate-page .home-icon,
+.contact-page .home-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.donate-steps {
+  margin-top: 1.25rem;
+  text-align: left;
+  color: #3b4a5a;
+  font-size: 0.95rem;
+}
+
+.donate-page .donate-card.compact p {
+  margin-bottom: 1rem;
+  flex: 0;
+}
+
+.donate-page .donate-card.steps .donate-steps {
+  margin-top: 2rem;
+}
+
+.donate-steps p {
+  margin: 0 0 0.75rem;
+}
+
+.donate-steps ol {
+  padding-left: 1.2rem;
+  margin: 0 0 0.75rem;
 }
 
 
