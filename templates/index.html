@@ -1,170 +1,194 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>RamEngineering — UNC</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "base.html" %}
 
-    <link rel="stylesheet" href="{{ url_for('static', path='css/main.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
-</head>
+{% block title %}R.A.M. Engineering{% endblock %}
+{% block body_class %}page-home{% endblock %}
 
-<body>
-
-<!-- HERO -->
+{% block content %}
 <section class="hero-elite">
-
-    <div class="hero-glow left"></div>
-    <div class="hero-glow right"></div>
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content fade-in">
-        <h1>RamEngineering</h1>
-        <p>
-            The mother collective of UNC's most ambitious and premier engineering groups.<br>
-            Where aerospace, robotics, and microtechnology collide.
-        </p>
-
-        <div class="hero-buttons">
-            <a href="#vision" class="btn outline">Our Vision</a>
-            <a href="#clubs" class="btn solid">Explore Divisions</a>
+    <div class="hero-inner">
+        <div class="hero-copy fade-in">
+            <p class="hero-kicker">University of North Carolina at Chapel Hill</p>
+            <h1>Carolina's premier engineering organization</h1>
+            <p class="hero-lede">
+                <b>R.A.M. Engineering</b> is a student organization at UNC Chapel Hill for robotics, aeronautics, and manufacturing.
+                We design and build aircraft, robots, and hardware with research labs, academic departments, and industry partners.
+                Members gain hands-on project experience and a network of peers and professionals in the field.
+            </p>
+            <p class="hero-tags">Robotics · Aeronautics · Manufacturing</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn solid">Explore our work</a>
+                <a href="#team" class="btn outline">Meet the team</a>
+            </div>
         </div>
-
-        <!--<div class="scroll-indicator">Scroll ↓</div>-->
     </div>
 </section>
 
-<!-- ABOUT + IMAGES -->
 <section class="about">
     <div class="about-text slide-left">
-        <h2>Inside RamEngineering</h2>
+        <h2>Industry-level rigor</h2>
         <p>
-            RamEngineering is a club, but we emulate an ecosystem where students design, test,
-            fail, rebuild, and launch real technology. From deep rocketry and advanced mechatronics to custom PCBs,
-            our members operate like a startup lab within UNC.
+            We run like a small lab inside UNC: our engineers design, test, scrap a board,
+            and try again. Rockets, robots, and custom silicon live in the same orbit
+            with an intuition that the work will always grow beyond blueprints.
         </p>
     </div>
 
     <div class="about-images slide-right">
+        <img src="{{ url_for('static', path='images/l_img1.png') }}">
         <img src="{{ url_for('static', path='images/img1.png') }}">
-        <img src="{{ url_for('static', path='images/img3.png') }}">
     </div>
 </section>
 
-<!-- IMAGE + TEXT REVERSED -->
 <section class="about alt">
     <div class="about-images slide-left">
-        <img src="{{ url_for('static', path='images/img2.png') }}">
-        <img src="{{ url_for('static', path='images/img4.png') }}">
+        <img src="{{ url_for('static', path='images/h_img1.png') }}">
+        <img src="{{ url_for('static', path='images/h_img2.png') }}">
     </div>
 
     <div class="about-text slide-right">
-        <h2>Built by Builders</h2>
+        <h2>Hands-on hardware</h2>
         <p>
-            Students collaborate in engineering spaces across campus, learning hands-on skills
-            that go far beyond the classroom. You will prototype, solder, code, fabricate, and iterate
-            alongside some of the most driven students at Carolina.
+            Members solder, mill, write firmware, and argue over tolerances in workspaces
+            across campus. With our lab partners and access to state-of-the-art machinery, 
+            we propel our ambitions to a limit that does not exist.
         </p>
     </div>
 </section>
 
-<!-- VISION -->
-<section id="vision" class="vision fade-in">
-    <h2>Our Vision</h2>
-    <p>
-        RamEngineering unifies builders here at Carolina under a single identity. We design for
-        autonomy, intelligence, precision, and scale.
-    </p>
-
-    <div class="pill-row">
-        <div class="pill">Innovation</div>
-        <div class="pill">Execution</div>
-        <div class="pill">Leadership</div>
-        <div class="pill">Autonomy</div>
-    </div>
-</section>
-
-<!-- DIVISIONS -->
-<section id="clubs" class="clubs">
+<section id="divisions" class="divisions">
     <h2 class="fade-in">Our Divisions</h2>
 
-    <div class="club-grid">
+    <div class="division-grid">
+        <article class="division-col fade-in">
+            <div class="division-head">
+                <img class="division-logo" src="{{ url_for('static', path='images/csllogo.png') }}" alt="">
+                <h3 style="font-size: 32px;">Carolina Skylab</h3>
+            </div>
+            <p class="division-desc">Air & space systems</p>
+            <hr class="division-rule">
+            <p class="division-focus">Engineers design, build, and fly aircraft, drones, and rockets. Past projects include a custom designed and fabricated F-Class solid rocket motor 
+                and an in-house developed flight controller for FPV drones.
+            </p>
+            <a href="https://carolinaskylab.org" target="_blank" rel="noopener" class="division-link">Learn More →</a>
+        </article>
 
-        <div class="club-card fade-in">
-            <img src="{{ url_for('static', path='images/csllogo.png') }}">
-            <h3>Carolina SkyLab</h3>
-            <p>Next-gen drones, aircraft, and rockets</p>
-            <a href="https://carolinaskylab.org" target="_blank" class="visit-btn">Visit Site</a>
-        </div>
+        <article class="division-col fade-in">
+            <div class="division-head">
+                <img class="division-logo" src="{{ url_for('static', path='images/rrlogo.png') }}" alt="">
+                <h3 style="font-size: 32px;">Ram Robotics</h3>
+            </div>
+            <p class="division-desc">Autonomous systems & mechatronics</p>
+            <hr class="division-rule">
+            <p class="division-focus">Engineers develop machines that sense, plan, and act on software that for navigation, manipulation, and control that we develop ourselves. 
+                Current projects range from a quadraped robot to an autonomous system designed for the UNC Facilities Deptartment.</p>
+            <a href="https://ramrobotics.org" target="_blank" rel="noopener" class="division-link">Learn More →</a>
+        </article>
 
-        <div class="club-card fade-in">
-            <img src="{{ url_for('static', path='images/rrlogo.png') }}">
-            <h3>RamRobotics</h3>
-            <p>Advanced robotics and software</p>
-            <a href="https://ramrobotics.org" target="_blank" class="visit-btn">Visit Site</a>
-        </div>
-
-        <div class="club-card fade-in">
-            <img src="{{ url_for('static', path='images/ccflogo.png') }}">
-            <h3>Carolina ChipFab</h3>
-            <p>Semiconductor design and fabrication</p>
-            <a href="https://www.carolinachipfab.org/" target="_blank" class="visit-btn">Visit Site</a>
-        </div>
-
+        <article class="division-col fade-in">
+            <div class="division-head">
+                <img class="division-logo" src="{{ url_for('static', path='images/ccflogo.png') }}" alt="">
+                <h3 style="font-size: 32px;">Carolina ChipFab</h3>
+            </div>
+            <p class="division-desc">Silicon design & fabrication</p>
+            <hr class="division-rule">
+            <p class="division-focus">Engineers here work on the forefront of semiconductors at Carolina. We design and fabricate hardware, covering circuit layout, process, packaging, and testing from concept to a finished chip.
+                Current projects inlcude a 2-qubit quantum computer and a semiconductor fab.
+            </p>
+            <a href="https://www.carolinachipfab.org/" target="_blank" rel="noopener" class="division-link">Learn More →</a>
+        </article>
     </div>
 </section>
 
-<!-- SPEAKERS + CONNECTIONS -->
-<section class="connect slide-up">
-    <div class="connect-inner">
-        <h2>Beyond Projects</h2>
-
-        <p class="connect-intro">
-            RamEngineering is deeply connected to industry and research. We host guest speakers,
-            company visits, alumni sessions, and technical workshops with leaders from aerospace,
-            robotics, AI, and semiconductor organizations.
+<section id="projects" class="notable fade-in">
+    <div class="notable-inner">
+        <h2>Notable Projects</h2>
+        <p class="notable-intro" style="width: 1500px;">
+            Selected builds that transformed beyond blueprints & CAD designs, built by Carolina's most elite engineers.
         </p>
 
-        <div class="connect-grid">
+        <div class="notable-grid">
+            <!-- Project 1: add more <img> tags inside notable-slides for additional photos -->
+            <article class="notable-card">
+                <div class="notable-photo">
+                    <div class="notable-slides">
+                        <img class="is-active" src="{{ url_for('static', path='images/fp/fp1.png') }}" alt="Project photo 1">
+                        <img src="{{ url_for('static', path='images/fp/fp2.png') }}" alt="Project photo 2">
+                        <img src="{{ url_for('static', path='images/fp/fp3.png') }}" alt="Project photo 3">
+                        <img src="{{ url_for('static', path='images/fp/fp4.png') }}" alt="Project photo 4">
+                        <img src="{{ url_for('static', path='images/fp/fp5.png') }}" alt="Project photo 5">
+                    </div>
+                    <button type="button" class="notable-slide-btn prev" aria-label="Previous image">‹</button>
+                    <button type="button" class="notable-slide-btn next" aria-label="Next image">›</button>
+                    <div class="notable-dots" role="tablist" aria-label="Project images"></div>
+                </div>
+                <p class="notable-meta">Ram Robotics · 2025</p>
+                <h3>Food Printer</h3>
+                <p>A modified 3D printer that can print food items in a variety of shapes and sizes. Winner of the Spring '26 Makerfest event.</p>
+            </article>
 
-            <div class="connect-card slide-left">
-                <h3>Industry Speakers</h3>
-                <p>Engineers and executives share real world experience and technical insight.</p>
-            </div>
+            <!-- Project 2 -->
+            <article class="notable-card">
+                <div class="notable-photo">
+                    <div class="notable-slides">
+                        <img class="is-active" src="{{ url_for('static', path='images/c45/c451.png') }}" alt="Project photo 1">
+                        <img src="{{ url_for('static', path='images/c45/c452.png') }}" alt="Project photo 2">
+                        <img src="{{ url_for('static', path='images/c45/c453.png') }}" alt="Project photo 3">
+                        <img src="{{ url_for('static', path='images/c45/c454.png') }}" alt="Project photo 4">
+                        <img src="{{ url_for('static', path='images/c45/c455.png') }}" alt="Project photo 5">
+                    </div>
+                    <button type="button" class="notable-slide-btn prev" aria-label="Previous image">‹</button>
+                    <button type="button" class="notable-slide-btn next" aria-label="Next image">›</button>
+                    <div class="notable-dots" role="tablist" aria-label="Project images"></div>
+                </div>
+                <p class="notable-meta">Carolina Skylab · 2026</p>
+                <h3>Conical Axisymmetric Thruster 45</h3>
+                <p>A custom designed H-class rocket motor that powered via KnSB solid propellant. Fully fabricated in-house by our engineers with our lab partners.</p>
+            </article>
 
-            <div class="connect-card fade-in">
-                <h3>Research Labs</h3>
-                <p>Collaborations with university and private research laboratories.</p>
-            </div>
-
-            <div class="connect-card slide-right">
-                <h3>Hackathons</h3>
-                <p>Fast paced build events that push creativity and execution.</p>
-            </div>
-
-            <div class="connect-card fade-in">
-                <h3>Competitions</h3>
-                <p>Regional and national engineering challenges and showcases.</p>
-            </div>
-
+            <!-- Project 3 -->
+            <article class="notable-card">
+                <div class="notable-photo">
+                    <div class="notable-slides">
+                        <img class="is-active" src="{{ url_for('static', path='images/db/db1.png') }}" alt="Project photo 1">
+                        <img src="{{ url_for('static', path='images/db/db2.png') }}" alt="Project photo 2">
+                        <img src="{{ url_for('static', path='images/db/db3.png') }}" alt="Project photo 3">
+                        <img src="{{ url_for('static', path='images/db/db4.png') }}" alt="Project photo 4">
+                    </div>
+                    <button type="button" class="notable-slide-btn prev" aria-label="Previous image">‹</button>
+                    <button type="button" class="notable-slide-btn next" aria-label="Next image">›</button>
+                    <div class="notable-dots" role="tablist" aria-label="Project images"></div>
+                </div>
+                <p class="notable-meta">Ram Robotics · 2024</p>
+                <h3>Delivery Bot</h3>
+                <p>An intelligent vehicle designed to fully autonomously transport tools and commodities between labs on campus. Supported by the UNC BeAM Makerspaces.</p>
+            </article>
         </div>
     </div>
 </section>
 
-<!-- JOIN -->
-<section class="join-upgraded fade-in">
-    <div class="join-content">
-        <h2>Join RamEngineering</h2>
-        <p>If you can imagine it, you can build it here.</p>
-        <a href="#" class="visit-btn join-btn">Join Now</a>
+<section id="join" class="join-upgraded fade-in">
+    <div class="join-layout">
+        <div class="join-content">
+            <h2>Come build with us.</h2>
+            <p>Applications are open to UNC–Chapel Hill students who want a bench, not a spectator seat.</p>
+            <a href="https://forms.gle/5CQCCxuQLDwcRYWi7" class="visit-btn join-btn">Apply now</a>
+        </div>
+
+        <aside class="join-contact">
+            <div class="join-contact-block">
+                <p class="join-contact-label">President</p>
+                <p class="join-contact-name">Arsh Noman</p>
+                <a href="mailto:arshn@unc.edu">arshn@unc.edu</a>
+            </div>
+            <div class="join-contact-block">
+                <p class="join-contact-label">Organization</p>
+                <a href="mailto:ramengineeringunc@gmail.com">ramengineeringunc@gmail.com</a>
+            </div>
+        </aside>
     </div>
 </section>
 
-<footer>
-    © RamEngineering — University of North Carolina
+<footer id="contact">
+    R.A.M. Engineering · University of North Carolina at Chapel Hill
 </footer>
-
-<script src="{{ url_for('static', path='js/main.js') }}"></script>
-
-</body>
-</html>
+{% endblock %}
