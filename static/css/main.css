@@ -196,15 +196,10 @@ h1, h2, h3 {
 .hero-elite {
   min-height: 100vh;
   background: linear-gradient(
-    180deg,
-    #5e2188 0%,
-    #5e2188 6%,
-    #7a3d9c 12%,
-    #a07ab8 20%,
-    #c4add3 28%,
-    #ede6f2 36%,
-    var(--carolina-white) 42%,
-    var(--carolina-white) 100%
+    180deg in oklab,
+    var(--navy) 0%,
+    var(--carolina) 34%,
+    var(--carolina-white) 62%
   );
   color: var(--navy);
   padding: 7.5rem 7% 4rem;
@@ -697,7 +692,7 @@ h1, h2, h3 {
 
 .join-upgraded {
   padding: 6.5rem 7%;
-  background: var(--purple-light);
+  background: var(--carolina);
 }
 
 .join-layout {
@@ -714,22 +709,22 @@ h1, h2, h3 {
 
 .join-upgraded h2 {
   font-size: clamp(2.2rem, 4vw, 3.2rem);
-  color: var(--purple);
+  color: var(--navy);
   margin-bottom: 0.8rem;
 }
 
 .join-content > p {
-  color: var(--purple);
+  color: var(--navy);
   margin-bottom: 1.8rem;
 }
 
 .join-btn {
-  background: var(--purple);
+  background: var(--navy);
   color: var(--carolina-white);
 }
 
 .join-btn:hover {
-  background: var(--purple-deep);
+  background: var(--navy-deep);
 }
 
 .join-contact {
@@ -746,7 +741,7 @@ h1, h2, h3 {
   font-weight: 650;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--purple);
+  color: var(--navy);
   opacity: 0.7;
   margin-bottom: 0.4rem;
 }
@@ -754,12 +749,12 @@ h1, h2, h3 {
 .join-contact-name {
   font-family: var(--serif);
   font-size: 1.2rem;
-  color: var(--purple);
+  color: var(--navy);
   margin-bottom: 0.25rem;
 }
 
 .join-contact a {
-  color: var(--purple);
+  color: var(--navy);
   text-decoration: none;
   font-size: 0.95rem;
   word-break: break-word;
@@ -771,8 +766,8 @@ h1, h2, h3 {
 
 footer {
   padding: 1.4rem 7%;
-  background: var(--purple);
-  color: rgba(255, 255, 255, 0.78);
+  background: var(--navy);
+  color: rgba(255, 255, 255, 0.72);
   font-size: 0.88rem;
 }
 
