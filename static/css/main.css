@@ -10,6 +10,7 @@
   --muted: #5b6573;
   --line: #d9d3c7;
   --serif: "Fraunces", "Iowan Old Style", "Palatino Linotype", serif;
+  --math: "STIX Two Math", "Times New Roman", serif;
   --sans: "Source Sans 3", "Segoe UI", sans-serif;
 }
 
@@ -72,19 +73,18 @@ h1, h2, h3 {
 }
 
 .nav-logo {
-  width: 38px;
-  height: 38px;
-  max-width: 38px;
-  object-fit: cover;
-  border-radius: 50%;
-  background: #111;
+  width: 44px;
+  height: 44px;
+  max-width: 44px;
+  object-fit: contain;
+  background: transparent;
   flex-shrink: 0;
 }
 
 .nav-mark {
-  font-family: var(--serif);
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-family: var(--math);
+  font-size: 1.22rem;
+  font-weight: 700;
 }
 
 .nav-rest {
@@ -164,14 +164,20 @@ h1, h2, h3 {
 
 .hero-inner {
   width: 100%;
-  max-width: 640px;
+  max-width: 46rem;
 }
 
 .hero-copy h1 {
-  max-width: 14ch;
-  font-size: clamp(2.35rem, 4.6vw, 3.7rem);
+  font-family: var(--math);
+  font-size: clamp(1.7rem, 5.4vw, 3.35rem);
+  font-weight: 700;
   color: var(--navy);
   margin: 0.55rem 0 1rem;
+}
+
+.hero-copy h1 span {
+  display: block;
+  white-space: nowrap;
 }
 
 .hero-kicker {
@@ -189,6 +195,11 @@ h1, h2, h3 {
   color: var(--navy);
   opacity: 0.82;
   margin-bottom: 0.85rem;
+}
+
+.hero-lede b {
+  font-family: var(--math);
+  font-weight: 700;
 }
 
 .hero-tags {
