@@ -12,7 +12,7 @@ app = FastAPI()
 # This mount is only used for local development.
 app.mount(
     "/static",
-    StaticFiles(directory=os.path.join(ROOT_DIR, "public", "static")),
+    StaticFiles(directory=os.path.join(ROOT_DIR, "public", "static"), check_dir=False),
     name="static"
 )
 
